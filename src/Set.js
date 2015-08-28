@@ -21,8 +21,8 @@ Array.prototype.remove = function (item, comparer) {
     var foundIndex = -1;
 
     if (!comparer) {
-        foundIndex = this.indexOf(item); 
-        
+        foundIndex = this.indexOf(item);
+
     }
     else {
         for (; i < this.length; i++) {
@@ -85,7 +85,7 @@ Array.prototype.intersection = function (other, comparer) {
     /// <summary>Returns a new set that contains all of the items that are common to both sets.</summary>
     /// <param name="other" type="Array, Object">The collection to find the intersection</param>
     /// <param name="comparer" type="Function">Optional function used to determine equality e.g. function(x, y) { return x.id === y.id; }</param>
-    /// <returns type="Array">A new Array</returns> 
+    /// <returns type="Array">A new Array</returns>
     var intersect = [];
     var i = 0;
     var item;
@@ -105,7 +105,7 @@ Array.prototype.difference = function (other, comparer) {
     /// <summary>Returns a new set that contains all of the items that exist in the first set and not in the second</summary>
     /// <param name="other" type="Array, Object">The collection to find the difference</param>
     /// <param name="comparer" type="Function">Optional function used to determine equality e.g. function(x, y) { return x.id === y.id; }</param>
-    /// <returns type="Array">A new Array</returns> 
+    /// <returns type="Array">A new Array</returns>
     var diff = this.clone();
     var i = 0;
 
@@ -113,4 +113,24 @@ Array.prototype.difference = function (other, comparer) {
         diff.remove(other[i], comparer);
     }
     return diff;
+}
+
+Array.prototype.distinct = function (comparer) {
+    /// <summary>Returns a new set that contains ony unique items</summary>
+    /// <param name="comparer" type="Function">Optional function used to determine equality e.g. function(x, y) { return x.id === y.id; }</param>
+    /// <returns type="Array">A new Array</returns>
+    var i = 0;
+    var arr = [];
+    var item;
+
+    if (!comparer) {
+      comparer = function (x,y) { return x == y; };
+    }
+    for (; i < this.length; i++) {
+      item = this[i];
+      if (!arr.contains(item, comparer)) {
+        arr.push(item);
+      }
+    }
+    return arr;
 }
