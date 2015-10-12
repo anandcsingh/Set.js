@@ -32,7 +32,7 @@ Returns a new set that contains all of the items that exist in both sets.
 ```js
 var arr1 = [2, 4, 6, 8];
 var arr2 = [1, 3, 5, 7, 8];
-var contains = arr1.union(arr2);
+var unionOfBothSets = arr1.union(arr2);
 ```
 
 ###intersection
