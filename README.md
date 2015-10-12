@@ -24,4 +24,4 @@ var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gen
 
 var contains = people.contains(anand, peopleCompare);
 
-```js
+```
