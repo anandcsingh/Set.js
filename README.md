@@ -9,7 +9,7 @@ Set.js adds set operations to the existing JavaScript array. These operations pr
 * difference
 * distinct
 
-##contains
+###contains
 Determines if an item exists in an array, you can optionally provide a function that determines equality.
 
 ```js
@@ -25,3 +25,17 @@ var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gen
 var contains = people.contains(anand, peopleCompare);
 
 ```
+
+###union
+
+###intersection
+
+###difference
+
+###distinct
+
+##Available helper methods
+* clone
+* pushRange
+* remove
+* findIndex
