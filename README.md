@@ -4,10 +4,10 @@ Set.js adds set operations to the existing JavaScript array. These operations pr
 
 ## Supported set operations
 * [contains](#contains)
-* union
-* intersection
-* difference
-* distinct
+* [union](#union)
+* [intersection](#intersection)
+* [difference](#difference)
+* [distinct](#distinct)
 
 ###contains
 Determines if an item exists in an array, you can optionally provide a function that determines equality.
