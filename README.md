@@ -113,10 +113,10 @@ var distinct = people.distinct(peopleCompare);
 ```
 
 ##Available helper methods
-* (clone)#clone
-* (pushRange)#pushRange
-* (remove)#remove
-* (findIndex)#findIndex
+* [clone](#clone)
+* [pushRange](#pushRange)
+* [remove](#remove)
+* [findIndex](#findIndex)
 
 ###clone
 Clones the structure of an array and not the actual objects, not a deep clone.
