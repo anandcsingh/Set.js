@@ -21,7 +21,7 @@ true
 
 ```js
 var anand = { name: 'Anand Singh', gender: 'Male' };
-var peopleCompare = function (a, b) { return a.name == b.name; };
+var peopleCompare = function (a, b) { return a.name === b.name; };
 var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gender: 'Male' }];
 
 var contains = people.contains(anand, peopleCompare);
@@ -30,7 +30,7 @@ true
 ```
 
 ###union
-Returns a new set that contains all of the items that exist in both sets.
+Returns a new set that contains all of the items that exist in both sets. You can optionally provide a function that determines equality.
 
 ```js
 var arr1 = [2, 4, 6, 8];
@@ -40,6 +40,14 @@ var unionOfBothSets = arr1.union(arr2);
 [2, 4, 6, 8, 1, 3, 5, 7]
 ```
 
+```js
+var peopleCompare = function (a, b) { return a.name === b.name; };
+var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gender: 'Male' }];
+var morePeople = [{ name: 'Aneela Singh', gender: 'Female' }, { name: 'Anand Singh', gender: 'Male' }];
+var union = people.union(morePeople, peopleCompare);
+
+[{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gender: 'Male' }, { name: 'Aneela Singh', gender: 'Female' }]
+```
 ###intersection
 Returns a new set that contains all of the items that are common to both sets. You can optionally provide a function that determines equality.
 
@@ -52,19 +60,33 @@ var intersection = arr1.intersection(arr2);
 ```
 
 ```js
-var peopleCompare = function (a, b) { return a.name == b.name; };
+var peopleCompare = function (a, b) { return a.name === b.name; };
 var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gender: 'Male' }];
-var morePeople = [{ name: 'Aneela Singh', gender: 'Male' }, { name: 'Anand Singh', gender: 'Male' }];
+var morePeople = [{ name: 'Aneela Singh', gender: 'Female' }, { name: 'Anand Singh', gender: 'Male' }];
 var intersection = people.intersection(morePeople, peopleCompare);
 
-[{ name: 'Aneela Singh', gender: 'Male' }]
+[{ name: 'Anand Singh', gender: 'Male' }]
 ```
 ###difference
 Returns a new set that contains all of the items that exist in the first set and not in the second. You can optionally provide a function that determines equality.
 
 ```js
+var arr1 = [1, 2, 4, 6, 8];
+var arr2 = [1, 3, 5, 7, 8];
+var difference = arr1.difference(arr2);
 
+[2, 4, 6]
 ```
+
+```js
+var peopleCompare = function (a, b) { return a.name === b.name; };
+var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gender: 'Male' }];
+var morePeople = [{ name: 'Aneela Singh', gender: 'Female' }, { name: 'Anand Singh', gender: 'Male' }];
+var difference = people.difference(morePeople, peopleCompare);
+
+[{ name: 'Anil Singh', gender: 'Male' }]
+```
+
 ###distinct
 
 ##Available helper methods
