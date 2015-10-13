@@ -15,6 +15,8 @@ Determines if an item exists in an array, you can optionally provide a function 
 ```js
 var arr = [2, 4, 6, 8];
 var contains = arr.contains(4);
+
+true
 ```
 
 ```js
@@ -24,6 +26,7 @@ var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gen
 
 var contains = people.contains(anand, peopleCompare);
 
+true
 ```
 
 ###union
@@ -33,6 +36,8 @@ Returns a new set that contains all of the items that exist in both sets.
 var arr1 = [2, 4, 6, 8];
 var arr2 = [1, 3, 5, 7, 8];
 var unionOfBothSets = arr1.union(arr2);
+
+[2, 4, 6, 8, 1, 3, 5, 7]
 ```
 
 ###intersection
@@ -42,13 +47,17 @@ Returns a new set that contains all of the items that are common to both sets. Y
 var arr1 = [1, 2, 4, 6, 8];
 var arr2 = [1, 3, 5, 7, 8];
 var intersection = arr1.intersection(arr2);
+
+[1, 8]
 ```
 
 ```js
 var peopleCompare = function (a, b) { return a.name == b.name; };
 var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gender: 'Male' }];
 var morePeople = [{ name: 'Aneela Singh', gender: 'Male' }, { name: 'Anand Singh', gender: 'Male' }];
-var intersection = people.intersection(morePeople);
+var intersection = people.intersection(morePeople, peopleCompare);
+
+[{ name: 'Aneela Singh', gender: 'Male' }]
 ```
 ###difference
 Returns a new set that contains all of the items that exist in the first set and not in the second. You can optionally provide a function that determines equality.
