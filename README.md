@@ -113,7 +113,69 @@ var distinct = people.distinct(peopleCompare);
 ```
 
 ##Available helper methods
-* clone
-* pushRange
-* remove
-* findIndex
+* (clone)#clone
+* (pushRange)#pushRange
+* (remove)#remove
+* (findIndex)#findIndex
+
+###clone
+Clones the structure of an array and not the actual objects, not a deep clone.
+
+```js
+var arr = [1, 3 , 5 , 7];
+var clone = arr.clone();
+
+[1, 3, 5, 7]
+```
+
+###pushRange
+Appends an existing collection to an exisitng array. This function modifies the original array.
+
+```js
+var arr1 = [1, 2, 4, 6];
+var arr2 = [3, 5, 7, 9];
+
+arr1.pushRange(arr2);
+
+[1, 2, 4, 6, 3, 5, 7, 9]
+```
+
+###remove
+Removes an item from an existing array, you can optionally provide a function that determines equality.
+
+```js
+var arr = [1, 3 , 5 , 7];
+arr.remove(5);
+
+[1, 3, 7]
+```
+
+```js
+var anand = { name: 'Anand Singh', gender: 'Male' };
+var peopleCompare = function (a, b) { return a.name === b.name; };
+var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gender: 'Male' }];
+
+people.remove(anand, peopleCompare); 
+
+[{ name: 'Anil Singh', gender: 'Male' }]
+```
+
+###findIndex
+Finds the index of an item in this array, if none is found -1 is returned. You can optionally provide a function that determines equality.
+
+```js
+var arr = [1, 3 , 5 , 7];
+arr.findIndex(5);
+
+2
+```
+
+```js
+var anand = { name: 'Anand Singh', gender: 'Male' };
+var peopleCompare = function (a, b) { return a.name === b.name; };
+var people = [{ name: 'Anand Singh', gender: 'Male' }, { name: 'Anil Singh', gender: 'Male' }];
+
+people.findIndex(anand, peopleCompare); 
+
+0
+```
