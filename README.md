@@ -1,6 +1,6 @@
 # Set.js
 
-Set.js adds set operations to the existing JavaScript array. These operations produce a result set which is based on the presence or absence of equivalent elements within the same or seperate arrays.
+Set.js adds set operations to the existing JavaScript array. These operations produce a result set which is based on the presence or absence of equivalent elements within the same or separate arrays.
 
 ## Supported set operations
 * [contains](#contains)
@@ -94,7 +94,7 @@ var difference = people.difference(morePeople, peopleCompare);
 ```
 
 ###distinct
-Returns a new set that contains ony unique items. You can optionally provide a function that determines equality.
+Returns a new set that contains only unique items. You can optionally provide a function that determines equality.
 
 ```js
 var arr = [1, 3 , 5 , 3, 4, 1];
@@ -129,7 +129,7 @@ var clone = arr.clone();
 ```
 
 ###pushRange
-Appends an existing collection to an exisitng array. This function modifies the original array.
+Appends an existing collection to an existing array. This function modifies the original array.
 
 ```js
 var arr1 = [1, 2, 4, 6];

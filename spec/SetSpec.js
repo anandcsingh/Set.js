@@ -27,6 +27,13 @@ describe("clone", function () {
         expect(originalObjectArr[0]).toBe(clone[0]);
         expect(originalObjectArr[2]).toBe(clone[2]);
     });
+	
+	it("can clone (deeply) an existing object array", function () {
+        var clone = newSimpleArr.clone(true);
+
+        expect(newSimpleArr[0]).toBe(clone[0]);
+        expect(newSimpleArr[2]).toBe(clone[2]);
+    });
 
   });
 
