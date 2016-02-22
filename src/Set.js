@@ -1,4 +1,12 @@
-﻿Array.prototype.clone = function () {
+/*!
+ * Set.js
+ * https://github.com/anandcsingh/Set.js
+ *
+ * Copyright (c) Anand C. Singh
+ * Licensed under the MIT license
+ */
+ 
+Array.prototype.clone = function () {
     /// <summary>Clones the structure of the array and not the actual objects
     /// the same objects will be referenced in the new array.</summary>
     /// <returns type="Array">The cloned Array.</returns>
